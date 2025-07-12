@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jaya Avinash Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      padding-top: 70px;
+    }
+
+    .bg-image {
+      background-image: url('image-2.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      height: 100vh;
+      opacity: 98%;
+      position: relative;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .navbar {
+      background-color: #4d5c5b;
+      transition: top 0.3s;
+    }
+
+    .nav-link {
+      color: white !important;
+      font-size: 16px;
+      padding: 16px;
+      font-family: cursive;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    .nav-link:hover {
+      color: #CD8D7A !important;
+    }
+
+    .btn {
+      background-color: #4d5c5b;
+      color: white;
+      font-weight: bold;
+      box-shadow: rgba(0, 0, 0, 0.35) 8px 8px 15px;
+      border-style: none;
+    }
+
+    .btn:hover {
+      background-color: #CD8D7A;
+      color: black;
+    }
+
+     .about-section {
+      background-color: #827673;
+      padding: 20px 40px;
+      border-radius: 8px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+      max-width: 1060px;
+      margin: 20px auto;
+      height: 100vh;
+    }
+
+    .about-title {
+      font-weight: bold;
+      font-size: 2.2rem;
+      padding: 10px;
+      color: #3D4948;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .about-subtitle {
+      font-weight: bold;
+      color:#F8ECD1;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+      font-style: italic;
+    }
+
+    .about-text {
+      color: white !important;
+      font-size: 1rem;
+      line-height: 1.6;
+
+    }
+
+    .social-icons i {
+      font-size: 1.4rem;
+      margin-right: 15px;
+      color: #fff;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons i:hover {
+      color: #4d5c5b;
+    }
+
+    .img-side {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      object-fit: cover;
+    }
+
+    .table {
+      background-color: #fff;
+      border-radius: 20px;
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+      font-size: 1rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .table th {
+      background-color: #4d5c5b;
+      color: white;
+      padding: 12px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .table td {
+      padding: 12px;
+      color: #333;
+      background-color: #CDC2AE;
+    }
+
+    .table-bordered th,
+    .table-bordered td {
+      border: 1px solid #ccc;
+    }
+
+    @media (max-width: 767px) {
+      .about-section {
+        padding: 20px;
+        height: auto;
+      }
+      .table {
+        display: none;
+      }
+    }
+
+
+      .contact-section {
+      padding: 60px 0;
+      background-color: #CDC2AE;
+    }
+
+    .contact-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .contact-title h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color:  #3D4948;
+    }
+
+    .contact-box {
+      background-color: #4d5c5b;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      color: #fff;
+    }
+
+    .contact-box i {
+      font-size: 1.5rem;
+      color: #ccc;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      background-color: #4d5c5b;
+      border: none;
+      padding: 12px;
+      color: #fff;
+      border-radius: 5px;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: #bbb;
+    }
+
+    .contact-form button {
+      background-color:#CD8D7A;
+      color:black;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #4d5c5b;
+      color: white;
+    }
+
+    @media (max-width: 767px) {
+      .contact-form {
+        margin-top: 30px;
+      }
+    }
+
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+  <div class="container">
+    <a class="navbar-brand" href="#" style="font-family: cursive; color: white!important;font-weight: bold;">MyPortfolio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#connect">Connect</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section id="home">
+  <div class="bg-image">
+    <div class="overlay d-flex flex-column justify-content-center align-items-center text-center px-4">
+      <h3 class="text-white mb-3">Welcome to My Portfolio</h3>
+      <h2 class="fw-bold mb-2" style="color:#3D4948;">Hi, I'm Jaya Avinash Giduturi</h2>
+      <p class="text-white mb-3" style="max-width: 600px;">
+        A passionate frontend and full-stack developer with experience in building responsive websites and interactive UIs using HTML, CSS, Bootstrap, React, and more.
+      </p>
+      <a href="F:\\AVINASH_RESUMES\\Jaya_Avinash_Resume.pdf" target="_blank" class="btn btn-light">Download Resume</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="about-title mb-2">About Us</h2>
+  <div class="about-section">
+    <div class="row align-items-center">
+      <div class="col-md-4 mb-4 mb-md-0">
+        <img src="profile.jpg" alt="Profile" class="img-side" style="height: 280px;width: 260px; border-radius: 46%; object-fit: cover;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+      </div>
+      <div class="col-md-8">
+        <p class="about-subtitle">G JAYA AVINASH - DEVELOPER</p>
+        <p class="about-text">
+          As a fresher in frontend development, I have already gained practical experience working on several impressive projects. Throughout my studies, I have honed my skills in HTML, CSS, JavaScript, and responsive web design.I utilized HTML and CSS to create an intuitive and visually appealing layout that effectively conveyed the organization's mission. By implementing JavaScript, I added interactive elements to enhance user engagement and functionality.As a motivated and enthusiastic frontend developer, I am eager to bring my skills and passion to contribute to innovative projects and continue growing in the field of frontend development.
+        </p>
+        <div class="social-icons mt-3">
+          <a href="https://www.linkedin.com/in/jaya-avinash-giduthuri-0293a3255/" target="_blank"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.facebook.com/avinash.gj.3/" target="_blank"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/_avi__giduthuri_?igsh=aXZ4YnZ3enhreDJm" target="_blank"><i class="bi bi-instagram"></i></a>
+          <a href="https://github.com/avinash-gj" target="_blank"><i class="bi bi-github"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-4 d-none d-md-block">
+      <table class="table table-bordered text-center">
+        <thead>
+          <tr>
+            <th>Qualification</th>
+            <th>School/College</th>
+            <th>Percentage/CGPA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>B.Tech (CSE-DS)</td>
+            <td>Pragati Engineering College</td>
+            <td>7.92</td>
+          </tr>
+          <tr>
+            <td>Diploma (CME)</td>
+            <td>Andhra Polytechnic</td>
+            <td>78%</td>
+          </tr>
+          <tr>
+            <td>10 Class (SSC)</td>
+            <td>P R G High School</td>
+            <td>8.7</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-4">
+      <h5>Experience</h5>
+      <p class="about-text">Fresher</p>
+    </div>
+  </div>
+</section>
+
+
+<section id="projects" class="py-5">
+   <div class="container">
+    <h2 class="text-center" style=" font-weight: bold;
+      font-size: 2.2rem;padding: 10px;">Projects</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card" style="background-color:#CDC2AE; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; border-style: none;">
+          <img src="megapixel.png" class="card-img-top" alt="Project 1">
+          <div class="card-body">
+            <h5 class="card-title">Megapixel Photography</h5>
+            <p class="card-text">Megapixel Photography is a portfolio website by Avinash that showcases his work across weddings, portraits, events, and nature. It highlights his creative style and offers clients an easy way to explore services, view past projects, and connect for bookings or inquiries.</p>
+            <a href="https://wonderful-banoffee-04e178.netlify.app/" class="btn btn-primary">View Project</a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-4">
+        <div class="card" style="background-color:#CDC2AE; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; border-style: none;">
+          <img src="edatum.png" class="card-img-top" alt="Project 1">
+          <div class="card-body">
+            <h5 class="card-title">e-Datum</h5>
+            <p class="card-text">Edatum is a technical event website by the Data Science Department of PEC. It displays student-led events, workshops, and competitions, provides event details and organizer info, and allows participants to explore schedules, register, and stay updated throughout the college fest.</p>
+            <a href="https://edatum-41lt-mfe5ms8th-avinash-gj.vercel.app/?vercelToolbarCode=GehJpn2j23J_Uum" class="btn btn-primary">View Project</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card" style="background-color:#CDC2AE; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; border-style: none;">
+          <img src="digitalclock.png" class="card-img-top" alt="Project 1">
+          <div class="card-body">
+            <h5 class="card-title">Digital Clock</h5>
+            <p class="card-text">This is a stylish digital clock built using HTML, CSS, and JavaScript, featuring dynamic RGB lighting effects. The clock displays real-time hours, minutes, and seconds with vibrant color transitions.This project showcases creative UI with smooth animations,real-time updates, and CSS lighting effects.</p>
+            <a href="https://dc-avinash-gj.vercel.app/" class="btn btn-primary">View Project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="contact-section" id="connect">
+  <div class="container">
+    <div class="contact-title">
+      <p>Get in touch</p>
+      <h2>Connect</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="contact-box">
+          <i class="bi bi-telephone-fill"></i>
+          <span>+91 7288994929</span>
+        </div>
+        <div class="contact-box">
+          <i class="bi bi-envelope-fill"></i>
+          <span>jayaavinashgiduturi@gmail.com</span>
+        </div>
+        <div class="contact-box">
+          <i class="bi bi-geo-alt-fill"></i>
+          <span>Kakinada, Andhra Pradesh</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <form class="contact-form">
+          <input type="text" placeholder="Your name">
+          <input type="email" placeholder="Your email">
+          <textarea rows="5" placeholder="Your message"></textarea>
+          <button type="submit">Connect</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="text-center text-white py-3" style="background-color:#4d5c5b;">
+  <div class="container">
+    <p class="mb-0 fw-bold">&copy; 2025 Jaya Avinash. All rights reserved.</p>
+  </div>
+</footer>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      const navbarCollapse = document.querySelector('.navbar-collapse');
+      if (navbarCollapse.classList.contains('show')) {
+        new bootstrap.Collapse(navbarCollapse).hide();
+      }
+    });
+  });
+
+
+  let lastScrollTop = 0;
+  const navbar = document.getElementById("mainNavbar");
+  window.addEventListener("scroll", function(){
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop){
+      navbar.style.top = "-80px";
+    } else {
+      navbar.style.top = "0";
+    }
+    lastScrollTop = scrollTop;
+  });
+</script>
+</body>
+</html>
